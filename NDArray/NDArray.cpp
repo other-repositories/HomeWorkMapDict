@@ -105,7 +105,7 @@ public:
         switch (r_type) {
         case RangeType::ROWS: {
             std::array<T, SIZE_H> arr;
-            for (int i = 0; i < SIZE_H; i++) {
+            for (size_t i = 0; i < SIZE_H; i++) {
                 switch (f_type) {
                 case FastType::MAX: arr[i] = *std::max_element(std::begin(m_array) + i * SIZE_W, std::begin(m_array) + (i + 1) * SIZE_W); break;
                 case FastType::MIN: arr[i] = *std::min_element(std::begin(m_array) + i * SIZE_W, std::begin(m_array) + (i + 1) * SIZE_W); break;
@@ -117,7 +117,7 @@ public:
                             break;
         case RangeType::COLUMNS: {
             std::array<T, SIZE_W> arr;
-            for (int i = 0; i < SIZE_W; i++) {
+            for (size_t i = 0; i < SIZE_W; i++) {
                 switch (f_type) {
                 case FastType::MAX: arr[i] = *std::max_element(std::begin(m_array) + i * SIZE_H, std::begin(m_array) + (i + 1) * SIZE_H); break;
                 case FastType::MIN: arr[i] = *std::min_element(std::begin(m_array) + i * SIZE_H, std::begin(m_array) + (i + 1) * SIZE_H); break;
@@ -213,8 +213,8 @@ public:
     //SUPPORT
 
     void draw() {
-        for (int i = 0; i < SIZE_H; i++) {
-            for (int j = 0; j < SIZE_W; j++) {
+        for (size_t i = 0; i < SIZE_H; i++) {
+            for (size_t j = 0; j < SIZE_W; j++) {
                 std::cout << m_array[i * SIZE_W + j] << " ";
             }
             std::cout << '\n';
